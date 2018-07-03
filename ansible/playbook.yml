@@ -1,0 +1,10 @@
+---
+  - hosts: all
+    become: yes
+    become_method: sudo
+    tasks:
+      - namve: "Install software"
+        apt: name={{ item }} state=present
+        with_items:
+          - mc
+  
