@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 BOX_IMAGE = "ubuntu/xenial64"
-NODE_COUNT = 2
+NODE_COUNT = 3
 
 Vagrant.configure("2") do |config|
   config.vm.define "master" do |subconfig|
@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
      sudo apt-get update
      apt-get install -y ansible
      su -c "source /vagrant/user-keygen.sh" vagrant
-     ansible-playbook  /vagrant/ansible/playbook.yml
+     ansible-playbook  /vagrant/ansible/playbook.yml 
    SHELL
   end
 
