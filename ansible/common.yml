@@ -1,0 +1,9 @@
+---
+- hosts: "{{ server_host }}"
+  become: yes
+
+  vars_files:
+    - group_vars/{{ app_env }}
+
+  roles:
+    - { role: common, tags: ['devops'] }

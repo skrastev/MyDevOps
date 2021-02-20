@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-BOX_IMAGE = "ubuntu/xenial64"
+BOX_IMAGE = "ubuntu/focal64"
 NODE_COUNT = 3
 
 Vagrant.configure("2") do |config|

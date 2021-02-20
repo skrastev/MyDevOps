@@ -1,0 +1,6 @@
+- name: Install base system packages Debian
+  apt:
+    name: "{{ item }}"
+    state: present
+    allow_unauthenticated: yes
+  with_items: "{{ install_pkg }}"
