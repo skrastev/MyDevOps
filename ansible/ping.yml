@@ -1,0 +1,5 @@
+---
+- name: Ping server {{ server_host}}
+  hosts: "{{ server_host}}"
+  roles:
+    - { role: ping }

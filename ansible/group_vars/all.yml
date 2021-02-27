@@ -1,0 +1,5 @@
+#DevOps
+install_pkg: [vim, git, mc, fping, nmap, lsof, sysstat, bzip2, traceroute, tcptraceroute, telnet, psmisc, git, fuse, readline-common, iptraf,
+  lynx, dstat, unzip, htop, mailutils, mutt, s3cmd, dos2unix, expect, mc, nfs-common, dmidecode, zip, smartmontools,
+  whois, gcc, awscli, libssl-dev, nano, vim, mc, strace, ethtool, whois, update-manager, aptitude,
+  wget, curl, libssl-dev, build-essential, chrony]
