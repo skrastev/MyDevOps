@@ -13,3 +13,5 @@ packer_bin_path: /usr/local/bin
 terraform_version: "0.14.7"
 terraform_arch: "amd64"
 terraform_bin_path: /usr/local/bin
+
+temp_dir: /tmp
