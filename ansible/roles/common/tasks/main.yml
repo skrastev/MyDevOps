@@ -4,3 +4,44 @@
     state: present
     allow_unauthenticated: yes
   with_items: "{{ install_pkg }}"
+
+- name: set timezone to "{{ timezone }}"
+  timezone:
+    name: "{{ timezone }}"
+
+- name: Download and unarchive Packer.
+  unarchive:
+    src: https://releases.hashicorp.com/packer/{{ packer_version }}/packer_{{ packer_version }}_linux_{{ packer_arch }}.zip
+    dest: "{{ packer_bin_path }}"
+    remote_src: true
+    creates: "{{ packer_bin_path }}/packer"
+    mode: 0755
+
+- name: Download and unarchive Terraform.
+  unarchive:
+    src: https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_{{ terraform_arch }}.zip
+    dest: "{{ terraform_bin_path }}"
+    remote_src: true
+    creates: "{{ terraform_bin_path }}/terraform"
+    mode: 0755
+
+- name: Download awscliv2 installer.
+  unarchive:
+    src: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+    dest: "{{ temp_dir }}"
+    remote_src: yes
+    creates: /tmp/aws
+    mode: 0755
+
+- name: Run the installer.
+  command:
+  args:
+    cmd: "{{ temp_dir }}/aws/install"
+    creates: /usr/local/bin/aws
+  become: true
+  register: aws_install
+
+- name: "Show installer output."
+  debug:
+    var: aws_install
+    verbosity: 2
