@@ -1,0 +1,15 @@
+---
+jenkins_repo_key_url: https://pkg.jenkins.io/debian-stable/jenkins.io.key
+jenkins_repo_url: "deb https://pkg.jenkins.io/debian-stable binary/"
+jenkins_pkg_url: https://pkg.jenkins.io/debian/binary
+
+jenkins_home: /var/lib/jenkins
+
+jenkins_process_user: jenkins
+jenkins_process_group: "{{ jenkins_process_user }}"
+
+admin_user_pass: admin
+
+jenkins_plugins:
+  - git
+  - aws-secrets-manager-credentials-provider

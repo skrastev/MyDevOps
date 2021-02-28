@@ -1,0 +1,6 @@
+---
+- hosts: "{{ server_host }}"
+  become: yes
+
+  roles:
+    - { role: jenkins, tags: ['jenkins'] }

@@ -15,3 +15,5 @@ terraform_arch: "amd64"
 terraform_bin_path: /usr/local/bin
 
 temp_dir: /tmp
+
+java_packages: "openjdk-11-jdk"
